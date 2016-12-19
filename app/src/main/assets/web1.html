@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1 id="h">这是WebView</h1>
+    <input type="button" value="js调native" onclick="ok()">
+</head>
+
+<body>
+    <script type="text/javascript">
+    function ok() {
+        // 调用java中toastMessage方法
+        android.toastMessage("哈哈,i m WebView msg");
+    }
+
+    function sum(i, m) {
+        var result = i + m;
+        document.getElementById("h").innerHTML = result;
+        // 调用java中onSumResult方法
+        android.onSumResult(result);
+    }
+
+    function getGreetings() {
+        return 1;
+    }
+    </script>
+</body>
+
+</html>
